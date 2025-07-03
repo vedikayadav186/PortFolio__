@@ -4,6 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, User, Github, ExternalLink } from "lucide-react";
+import { useEffect } from "react";
+// CultivAI project images
+import cultivAIImage1 from "@assets/Screenshot 2025-01-15 233006_1751564292179.png";
+import cultivAIImage2 from "@assets/Screenshot 2025-01-16 110002_1751564292182.png";
+import cultivAIImage3 from "@assets/Screenshot 2025-02-08 131809_1751564292183.png";
+// DigiDetOX project images
+import digiDetOXImage1 from "@assets/Screenshot (26)_1751564350845.png";
+import digiDetOXImage2 from "@assets/Screenshot (35)_1751564350845.png";
+import digiDetOXImage3 from "@assets/Screenshot (39)_1751564350846.png";
 
 interface Project {
   id: string;
@@ -89,6 +98,11 @@ const projects: { [key: string]: Project } = {
 export default function ProjectDetail() {
   const [, params] = useRoute("/project/:id");
   const project = params ? projects[params.id] : null;
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!project) {
     return (
@@ -223,18 +237,36 @@ export default function ProjectDetail() {
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-semibold mb-6 text-cyan-accent">Project Images</h2>
                   
-                  {/* Image Placeholders */}
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {[1, 2, 3].map((index) => (
-                      <div key={index} className="h-32 bg-slate/10 border-2 border-dashed border-slate/30 rounded-lg flex items-center justify-center">
-                        <div className="text-center">
-                          <div className="w-8 h-8 bg-slate/20 rounded mb-2 mx-auto flex items-center justify-center">
-                            <span className="text-slate text-sm">📷</span>
+                  {/* Project Screenshots */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {(() => {
+                      const imageMap = {
+                        "cultivai": [cultivAIImage1, cultivAIImage2, cultivAIImage3],
+                        "digidetox": [digiDetOXImage1, digiDetOXImage2, digiDetOXImage3]
+                      };
+                      const projectImages = imageMap[project.id as keyof typeof imageMap] || [];
+                      
+                      return projectImages.map((imageSrc, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.3, delay: index * 0.1 }}
+                          className="group cursor-pointer"
+                        >
+                          <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
+                            <img 
+                              src={imageSrc}
+                              alt={`${project.title} screenshot ${index + 1}`}
+                              className="w-full h-48 object-cover"
+                            />
+                            <div className="p-3 bg-charcoal">
+                              <p className="text-sm text-slate">Screenshot {index + 1}</p>
+                            </div>
                           </div>
-                          <span className="text-xs text-slate">Project Image {index}</span>
-                        </div>
-                      </div>
-                    ))}
+                        </motion.div>
+                      ));
+                    })()}
                   </div>
                 </CardContent>
               </Card>
