@@ -5,50 +5,103 @@ import { scrollToSection } from "@/lib/utils";
 export default function HeroSection() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-navy via-charcoal to-navy"></div>
+      {/* Dynamic gradient background */}
+      <div className="absolute inset-0">
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-br from-navy via-charcoal to-navy"
+          animate={{
+            background: [
+              "linear-gradient(135deg, #0a0e27 0%, #1a1d29 50%, #0a0e27 100%)",
+              "linear-gradient(135deg, #0a0e27 0%, #1e2749 50%, #0a0e27 100%)",
+              "linear-gradient(135deg, #0a0e27 0%, #1a1d29 50%, #0a0e27 100%)"
+            ]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      </div>
       
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="grid grid-cols-12 gap-8 h-full w-full p-8">
-          {[...Array(24)].map((_, i) => (
-            <motion.div 
-              key={i}
-              className={`${i % 3 === 0 ? 'bg-electric-blue' : 'bg-cyan-accent'} rounded-full`}
-              style={{
-                width: Math.random() * 8 + 4 + 'px',
-                height: Math.random() * 8 + 4 + 'px',
-              }}
-              animate={{ 
-                opacity: [0.2, 1, 0.2],
-                scale: [0.8, 1.2, 0.8],
-                y: [0, -20, 0]
-              }}
-              transition={{ 
-                duration: Math.random() * 3 + 2, 
-                repeat: Infinity,
-                delay: Math.random() * 2 
-              }}
-            />
-          ))}
-        </div>
+      {/* Animated matrix-like background */}
+      <div className="absolute inset-0 opacity-10">
+        {[...Array(50)].map((_, i) => (
+          <motion.div 
+            key={i}
+            className="absolute w-px bg-gradient-to-b from-transparent via-electric-blue to-transparent"
+            style={{
+              left: `${(i * 2) % 100}%`,
+              height: `${Math.random() * 60 + 20}%`,
+            }}
+            animate={{
+              opacity: [0, 1, 0],
+              scaleY: [0, 1, 0],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
       </div>
 
-      {/* Floating geometric shapes */}
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className={`absolute rounded-full ${i % 2 === 0 ? 'bg-electric-blue/30' : 'bg-cyan-accent/30'}`}
+            style={{
+              width: Math.random() * 6 + 2 + 'px',
+              height: Math.random() * 6 + 2 + 'px',
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%',
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, Math.random() * 20 - 10, 0],
+              opacity: [0.3, 1, 0.3],
+              scale: [0.8, 1.2, 0.8],
+            }}
+            transition={{
+              duration: Math.random() * 4 + 3,
+              repeat: Infinity,
+              delay: Math.random() * 3,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Professional geometric overlay */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 left-10 w-16 h-16 border-2 border-cyan-accent/30"
+          className="absolute top-1/4 left-10 w-20 h-20 border border-electric-blue/20"
           animate={{ rotate: 360 }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute top-1/3 right-16 w-16 h-16 border border-cyan-accent/20 rotate-45"
+          animate={{ rotate: [45, 405] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute top-40 right-20 w-12 h-12 bg-electric-blue/20 rounded-full"
-          animate={{ y: [-20, 20, -20] }}
-          transition={{ duration: 6, repeat: Infinity }}
+          className="absolute bottom-1/4 left-1/4 w-12 h-12 bg-electric-blue/10 rounded-full"
+          animate={{ 
+            scale: [1, 1.3, 1],
+            opacity: [0.1, 0.3, 0.1]
+          }}
+          transition={{ duration: 4, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-32 left-20 w-8 h-8 bg-cyan-accent/30 transform rotate-45"
-          animate={{ rotate: [45, 225, 45] }}
-          transition={{ duration: 8, repeat: Infinity }}
+          className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-cyan-accent/10"
+          animate={{ 
+            rotate: [0, 180, 360],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 6, repeat: Infinity }}
         />
       </div>
 

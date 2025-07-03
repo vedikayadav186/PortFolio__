@@ -13,10 +13,10 @@ export default function SkillsSection() {
       icon: Code,
       color: "from-blue-500 to-cyan-500",
       skills: [
-        { name: "React.js", icon: "⚛️", level: 85 },
-        { name: "HTML5", icon: "🌐", level: 95 },
-        { name: "CSS3", icon: "🎨", level: 90 },
-        { name: "JavaScript", icon: "📜", level: 80 },
+        { name: "React.js", icon: "⚛️" },
+        { name: "HTML5", icon: "🌐" },
+        { name: "CSS3", icon: "🎨" },
+        { name: "JavaScript", icon: "📜" },
       ],
     },
     {
@@ -24,10 +24,10 @@ export default function SkillsSection() {
       icon: Database,
       color: "from-green-500 to-emerald-500",
       skills: [
-        { name: "Python", icon: "🐍", level: 85 },
-        { name: "PHP", icon: "🐘", level: 75 },
-        { name: "MongoDB", icon: "🍃", level: 80 },
-        { name: "MySQL", icon: "🗄️", level: 85 },
+        { name: "Python", icon: "🐍" },
+        { name: "PHP", icon: "🐘" },
+        { name: "MongoDB", icon: "🍃" },
+        { name: "MySQL", icon: "🗄️" },
       ],
     },
     {
@@ -35,10 +35,10 @@ export default function SkillsSection() {
       icon: Settings,
       color: "from-purple-500 to-pink-500",
       skills: [
-        { name: "Firebase", icon: "🔥", level: 80 },
-        { name: "Power Apps", icon: "⚡", level: 90 },
-        { name: "Bootstrap", icon: "🅱️", level: 85 },
-        { name: "Git", icon: "📊", level: 75 },
+        { name: "Firebase", icon: "🔥" },
+        { name: "Power Apps", icon: "⚡" },
+        { name: "Bootstrap", icon: "🅱️" },
+        { name: "Git", icon: "📊" },
       ],
     },
   ];
@@ -111,32 +111,18 @@ export default function SkillsSection() {
                         onHoverStart={() => setHoveredSkill(skill.name)}
                         onHoverEnd={() => setHoveredSkill(null)}
                       >
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-2">
-                            <motion.span 
-                              className="text-lg"
-                              animate={{ 
-                                scale: hoveredSkill === skill.name ? 1.3 : 1,
-                                rotate: hoveredSkill === skill.name ? [0, -10, 10, 0] : 0
-                              }}
-                              transition={{ duration: 0.3 }}
-                            >
-                              {skill.icon}
-                            </motion.span>
-                            <span className="text-white font-medium">{skill.name}</span>
-                          </div>
-                          <span className="text-cyan-accent text-sm font-semibold">{skill.level}%</span>
-                        </div>
-                        
-                        {/* Animated progress bar */}
-                        <div className="w-full bg-navy rounded-full h-2 overflow-hidden">
-                          <motion.div
-                            className={`h-2 bg-gradient-to-r ${category.color} rounded-full`}
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            transition={{ duration: 1, delay: skillIndex * 0.2 }}
-                            viewport={{ once: true }}
-                          />
+                        <div className="flex items-center space-x-2">
+                          <motion.span 
+                            className="text-lg"
+                            animate={{ 
+                              scale: hoveredSkill === skill.name ? 1.3 : 1,
+                              rotate: hoveredSkill === skill.name ? [0, -10, 10, 0] : 0
+                            }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            {skill.icon}
+                          </motion.span>
+                          <span className="text-white font-medium">{skill.name}</span>
                         </div>
                       </motion.div>
                     ))}

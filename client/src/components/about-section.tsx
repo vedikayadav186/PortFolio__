@@ -20,8 +20,8 @@ export default function AboutSection() {
 
   const stats = [
     { icon: GraduationCap, label: "CGPA", value: "9.13", color: "text-yellow-500" },
-    { icon: Code2, label: "Projects", value: "10+", color: "text-green-500" },
-    { icon: Briefcase, label: "Experience", value: "6 Months", color: "text-blue-500" },
+    { icon: Code2, label: "Projects", value: "5+", color: "text-green-500" },
+    { icon: Briefcase, label: "Experience", value: "Intern", color: "text-blue-500" },
     { icon: MapPin, label: "Location", value: "Nashik", color: "text-purple-500" },
   ];
 
@@ -96,7 +96,7 @@ export default function AboutSection() {
               </div>
               
               <p className="text-lg text-light-slate leading-relaxed">
-                Currently working as a Project Intern at ABB India Ltd., where I've successfully digitalized 
+                Recently completed an internship at ABB India Ltd., where I successfully digitalized 
                 Low Voltage Systems, reducing paper usage by 80% and improving workflow efficiency.
               </p>
             </div>

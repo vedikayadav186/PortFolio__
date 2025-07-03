@@ -3,10 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sprout, Recycle } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function ProjectsSection() {
+  const [, navigate] = useLocation();
+  
   const projects = [
     {
+      id: "cultivai",
       title: "CultivAI - Smart Farming Tool",
       description: "AI-powered app providing weather insights, crop progress tracking, and task scheduling, alongside equipment rental, labor hiring, and secure smart contract-based transactions.",
       role: "Backend & Integration Developer",
@@ -15,6 +19,7 @@ export default function ProjectsSection() {
       icon: Sprout,
     },
     {
+      id: "digidetox",
       title: "DigidetOX - E-Waste Facility Locator",
       description: "Developed a website to locate nearby e-waste facilities, educate users on e-waste hazards, and offer credits based on recovered precious metals from properly disposed devices.",
       role: "Project Lead and Developer",
@@ -80,7 +85,10 @@ export default function ProjectsSection() {
                     ))}
                   </div>
                   
-                  <Button className="w-full bg-electric-blue hover:bg-blue-600 transition-all">
+                  <Button 
+                    className="w-full bg-electric-blue hover:bg-blue-600 transition-all"
+                    onClick={() => navigate(`/project/${project.id}`)}
+                  >
                     View Project Details
                   </Button>
                 </CardContent>
