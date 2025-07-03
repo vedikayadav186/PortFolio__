@@ -8,6 +8,14 @@ export default function AchievementsSection() {
 
   const achievements = [
     {
+      id: "aws-certification",
+      title: "AWS Certification",
+      description: "Amazon Web Services Cloud Computing Certification",
+      date: "Jan 2025",
+      icon: Award,
+      color: "text-orange-400",
+    },
+    {
       id: "abb-winner",
       title: "Winner",
       description: "ABB Live Project Competition 2025",
@@ -57,28 +65,7 @@ export default function AchievementsSection() {
     },
   ];
 
-  const handleImageUpload = (achievementId: string, event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const result = e.target?.result as string;
-        setUploadedImages(prev => ({
-          ...prev,
-          [achievementId]: result
-        }));
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
-  const removeImage = (achievementId: string) => {
-    setUploadedImages(prev => {
-      const newImages = { ...prev };
-      delete newImages[achievementId];
-      return newImages;
-    });
-  };
 
   return (
     <section id="achievements" className="py-20 bg-charcoal">
