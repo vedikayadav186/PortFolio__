@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { User, MapPin, GraduationCap, Code2, Briefcase } from "lucide-react";
 import { useState, useEffect } from "react";
+import profileImage from "@assets/WhatsApp Image 2025-07-03 at 10.10.33 PM_1751561374349.jpeg";
 
 export default function AboutSection() {
   const [typedText, setTypedText] = useState("");
@@ -73,7 +74,7 @@ export default function AboutSection() {
             {/* Professional headshot */}
             <div className="w-80 h-80 mx-auto rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="/attached_assets/WhatsApp Image 2025-07-03 at 10.10.33 PM_1751561374349.jpeg"
+                src={profileImage}
                 alt="Vedika Yadav - Professional headshot"
                 className="w-full h-full object-cover"
               />

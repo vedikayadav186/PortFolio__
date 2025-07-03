@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Medal, Award, Star, Tag, GraduationCap } from "lucide-react";
 import { useState } from "react";
+import abbWinnerImage from "@assets/WhatsApp Image 2025-07-03 at 10.11.16 PM_1751561387853.jpeg";
+import iicThirdImage from "@assets/WhatsApp Image 2025-07-03 at 10.12.10 PM_1751561406583.jpeg";
+import wolframAwardImage from "@assets/WhatsApp Image 2025-07-03 at 10.16.20 PM_1751561413545.jpeg";
+import techPragyanImage from "@assets/WhatsApp Image 2025-07-03 at 10.13.58 PM_1751561428063.jpeg";
+import odooFinalistImage from "@assets/WhatsApp Image 2025-07-03 at 10.15.00 PM_1751561437065.jpeg";
 
 export default function AchievementsSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -87,11 +92,11 @@ export default function AchievementsSection() {
                   <div className="w-full h-32 mb-4 rounded-lg overflow-hidden bg-charcoal/50 border-2 border-slate/30 relative">
                     {(() => {
                       const imageMap = {
-                        "abb-winner": "/attached_assets/WhatsApp Image 2025-07-03 at 10.11.16 PM_1751561387853.jpeg",
-                        "iic-3rd": "/attached_assets/WhatsApp Image 2025-07-03 at 10.12.10 PM_1751561406583.jpeg",
-                        "wolfram-award": "/attached_assets/WhatsApp Image 2025-07-03 at 10.16.20 PM_1751561413545.jpeg",
-                        "tech-pragyan": "/attached_assets/WhatsApp Image 2025-07-03 at 10.13.58 PM_1751561428063.jpeg",
-                        "odoo-finalist": "/attached_assets/WhatsApp Image 2025-07-03 at 10.15.00 PM_1751561437065.jpeg"
+                        "abb-winner": abbWinnerImage,
+                        "iic-3rd": iicThirdImage,
+                        "wolfram-award": wolframAwardImage,
+                        "tech-pragyan": techPragyanImage,
+                        "odoo-finalist": odooFinalistImage
                       };
                       const imageSrc = imageMap[achievement.id as keyof typeof imageMap];
                       
