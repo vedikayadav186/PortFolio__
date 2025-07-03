@@ -45,9 +45,19 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+              className="group"
             >
-              <Card className="bg-navy border-slate/20 card-hover h-full">
-                <CardContent className="p-8">
+              <Card className="bg-navy border-slate/20 card-hover h-full relative overflow-hidden">
+                {/* Animated border effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-electric-blue via-cyan-accent to-electric-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                     style={{ 
+                       background: "linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.2), transparent)",
+                       animation: "shimmer 2s infinite"
+                     }} 
+                />
+                <div className="absolute inset-[1px] bg-navy rounded-lg" />
+                <CardContent className="p-8 relative z-10">
                   <div className="flex items-center mb-4">
                     <project.icon className="h-6 w-6 text-cyan-accent mr-3" />
                     <h3 className="text-xl font-semibold">{project.title}</h3>
