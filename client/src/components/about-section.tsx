@@ -70,9 +70,13 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            {/* Professional headshot placeholder */}
-            <div className="w-80 h-80 mx-auto bg-gradient-to-br from-electric-blue to-cyan-accent rounded-2xl flex items-center justify-center">
-              <User className="text-6xl text-white" />
+            {/* Professional headshot */}
+            <div className="w-80 h-80 mx-auto rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="/attached_assets/WhatsApp Image 2025-07-03 at 10.10.33 PM_1751561374349.jpeg"
+                alt="Vedika Yadav - Professional headshot"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
           

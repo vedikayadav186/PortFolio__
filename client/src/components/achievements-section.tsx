@@ -47,14 +47,7 @@ export default function AchievementsSection() {
       icon: Tag,
       color: "text-green-500",
     },
-    {
-      id: "math-competition",
-      title: "1st Rank",
-      description: "Intercollege Math Competition",
-      date: "2021",
-      icon: GraduationCap,
-      color: "text-purple-500",
-    },
+
   ];
 
 
@@ -90,14 +83,35 @@ export default function AchievementsSection() {
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 bg-gradient-to-br ${achievement.color.replace('text-', 'from-').replace('-500', '-500/20').replace('-400', '-400/20')} to-transparent`} />
                 
                 <CardContent className="p-6 flex flex-col items-center relative z-10">
-                  {/* Image placeholder area */}
-                  <div className="w-full h-32 mb-4 rounded-lg overflow-hidden bg-charcoal/50 border-2 border-slate/30 relative flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-slate/20 rounded-lg mb-2 mx-auto flex items-center justify-center">
-                        <span className="text-slate text-xl">🏆</span>
-                      </div>
-                      <span className="text-xs text-slate">Achievement Photo</span>
-                    </div>
+                  {/* Achievement Image */}
+                  <div className="w-full h-32 mb-4 rounded-lg overflow-hidden bg-charcoal/50 border-2 border-slate/30 relative">
+                    {(() => {
+                      const imageMap = {
+                        "abb-winner": "/attached_assets/WhatsApp Image 2025-07-03 at 10.11.16 PM_1751561387853.jpeg",
+                        "iic-3rd": "/attached_assets/WhatsApp Image 2025-07-03 at 10.12.10 PM_1751561406583.jpeg",
+                        "wolfram-award": "/attached_assets/WhatsApp Image 2025-07-03 at 10.16.20 PM_1751561413545.jpeg",
+                        "tech-pragyan": "/attached_assets/WhatsApp Image 2025-07-03 at 10.13.58 PM_1751561428063.jpeg",
+                        "odoo-finalist": "/attached_assets/WhatsApp Image 2025-07-03 at 10.15.00 PM_1751561437065.jpeg"
+                      };
+                      const imageSrc = imageMap[achievement.id as keyof typeof imageMap];
+                      
+                      return imageSrc ? (
+                        <img 
+                          src={imageSrc}
+                          alt={achievement.title}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="flex items-center justify-center h-full">
+                          <div className="text-center">
+                            <div className="w-12 h-12 bg-slate/20 rounded-lg mb-2 mx-auto flex items-center justify-center">
+                              <span className="text-slate text-xl">🏆</span>
+                            </div>
+                            <span className="text-xs text-slate">Achievement Photo</span>
+                          </div>
+                        </div>
+                      );
+                    })()}
                   </div>
 
                   <motion.div
