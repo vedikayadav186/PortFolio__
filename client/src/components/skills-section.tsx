@@ -45,6 +45,12 @@ export default function SkillsSection() {
 
   const certifications = [
     {
+      title: "AWS Cloud Computing Certification",
+      organization: "Amazon Web Services",
+      description: "Cloud architecture, services deployment, and AWS best practices",
+      date: "January 2025",
+    },
+    {
       title: "Android App Development Using Kotlin",
       organization: "Spoken Tutorial Project, IIT Bombay",
       description: "Mobile app architecture, layout structuring, and UI flows",

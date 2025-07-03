@@ -8,14 +8,6 @@ export default function AchievementsSection() {
 
   const achievements = [
     {
-      id: "aws-certification",
-      title: "AWS Certification",
-      description: "Amazon Web Services Cloud Computing Certification",
-      date: "Jan 2025",
-      icon: Award,
-      color: "text-orange-400",
-    },
-    {
       id: "abb-winner",
       title: "Winner",
       description: "ABB Live Project Competition 2025",
