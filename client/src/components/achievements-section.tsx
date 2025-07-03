@@ -89,7 +89,7 @@ export default function AchievementsSection() {
                 
                 <CardContent className="p-6 flex flex-col items-center relative z-10">
                   {/* Achievement Image */}
-                  <div className="w-full h-32 mb-4 rounded-lg overflow-hidden bg-charcoal/50 border-2 border-slate/30 relative">
+                  <div className="w-full h-40 mb-4 rounded-lg overflow-hidden bg-charcoal/50 border-2 border-slate/30 relative">
                     {(() => {
                       const imageMap = {
                         "abb-winner": abbWinnerImage,
@@ -104,7 +104,7 @@ export default function AchievementsSection() {
                         <img 
                           src={imageSrc}
                           alt={achievement.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain bg-white"
                         />
                       ) : (
                         <div className="flex items-center justify-center h-full">

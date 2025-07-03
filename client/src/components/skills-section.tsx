@@ -151,7 +151,7 @@ export default function SkillsSection() {
             <h3 className="text-2xl font-semibold text-cyan-accent">Certifications & Training</h3>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {certifications.map((cert, index) => (
               <motion.div
                 key={cert.title}
@@ -160,12 +160,12 @@ export default function SkillsSection() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="bg-charcoal border-slate/20">
-                  <CardContent className="p-6">
-                    <h4 className="font-semibold text-white mb-2">{cert.title}</h4>
-                    <p className="text-electric-blue text-sm mb-2">{cert.organization}</p>
-                    <p className="text-light-slate text-sm mb-2">{cert.description}</p>
-                    <Badge variant="outline" className="text-cyan-accent border-cyan-accent">
+                <Card className="bg-charcoal border-slate/20 h-full">
+                  <CardContent className="p-8">
+                    <h4 className="font-semibold text-white mb-3 text-lg">{cert.title}</h4>
+                    <p className="text-electric-blue text-base mb-3">{cert.organization}</p>
+                    <p className="text-light-slate text-base mb-4 leading-relaxed">{cert.description}</p>
+                    <Badge variant="outline" className="text-cyan-accent border-cyan-accent text-sm px-3 py-1">
                       {cert.date}
                     </Badge>
                   </CardContent>
