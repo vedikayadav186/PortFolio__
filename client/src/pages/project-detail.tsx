@@ -238,7 +238,7 @@ export default function ProjectDetail() {
                   <h2 className="text-2xl font-semibold mb-6 text-cyan-accent">Project Images</h2>
                   
                   {/* Project Screenshots */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {(() => {
                       const imageMap = {
                         "cultivai": [cultivAIImage1, cultivAIImage2, cultivAIImage3],
@@ -254,14 +254,15 @@ export default function ProjectDetail() {
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                           className="group cursor-pointer"
                         >
-                          <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
+                          <div className="bg-white rounded-xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-300 group-hover:scale-102">
                             <img 
                               src={imageSrc}
                               alt={`${project.title} screenshot ${index + 1}`}
-                              className="w-full h-48 object-cover"
+                              className="w-full h-80 object-contain bg-gray-50"
                             />
-                            <div className="p-3 bg-charcoal">
-                              <p className="text-sm text-slate">Screenshot {index + 1}</p>
+                            <div className="p-4 bg-charcoal border-t border-slate/20">
+                              <p className="text-base text-cyan-accent font-medium">Screenshot {index + 1}</p>
+                              <p className="text-sm text-slate mt-1">{project.title} Interface</p>
                             </div>
                           </div>
                         </motion.div>
