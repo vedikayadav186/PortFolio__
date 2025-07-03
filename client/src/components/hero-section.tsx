@@ -149,8 +149,9 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Professional geometric overlay */}
+      {/* Professional geometric overlay with tech elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Rotating geometric shapes */}
         <motion.div
           className="absolute top-1/4 left-10 w-20 h-20 border border-electric-blue/20"
           animate={{ rotate: 360 }}
@@ -161,22 +162,106 @@ export default function HeroSection() {
           animate={{ rotate: [45, 405] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
+        
+        {/* Code-like elements */}
         <motion.div
-          className="absolute bottom-1/4 left-1/4 w-12 h-12 bg-electric-blue/10 rounded-full"
+          className="absolute top-20 right-1/4 text-electric-blue/30 font-mono text-sm"
           animate={{ 
-            scale: [1, 1.3, 1],
-            opacity: [0.1, 0.3, 0.1]
+            opacity: [0.3, 0.7, 0.3],
+            y: [0, -10, 0]
           }}
           transition={{ duration: 4, repeat: Infinity }}
+        >
+          {'<Developer />'}
+        </motion.div>
+        
+        <motion.div
+          className="absolute bottom-1/3 left-20 text-cyan-accent/30 font-mono text-xs"
+          animate={{ 
+            opacity: [0.2, 0.6, 0.2],
+            x: [0, 5, 0]
+          }}
+          transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+        >
+          const skills = ['React', 'Python', 'MongoDB'];
+        </motion.div>
+        
+        <motion.div
+          className="absolute top-1/2 left-1/4 text-purple-400/30 font-mono text-xs"
+          animate={{ 
+            opacity: [0.2, 0.5, 0.2],
+            scale: [1, 1.05, 1]
+          }}
+          transition={{ duration: 6, repeat: Infinity, delay: 2 }}
+        >
+          function buildAwesome() {'{'}
+        </motion.div>
+        
+        {/* Tech symbols */}
+        <motion.div
+          className="absolute bottom-1/4 right-20 text-electric-blue/25 text-2xl"
+          animate={{ 
+            rotate: [0, 360],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ duration: 8, repeat: Infinity }}
+        >
+          ⚛️
+        </motion.div>
+        
+        <motion.div
+          className="absolute top-1/3 left-1/3 text-cyan-accent/25 text-xl"
+          animate={{ 
+            y: [0, -15, 0],
+            opacity: [0.2, 0.6, 0.2]
+          }}
+          transition={{ duration: 7, repeat: Infinity, delay: 1.5 }}
+        >
+          🐍
+        </motion.div>
+        
+        {/* Circuit-like patterns */}
+        <motion.div
+          className="absolute top-40 left-1/2 w-px h-16 bg-electric-blue/20"
+          animate={{ 
+            scaleY: [0, 1, 0],
+            opacity: [0, 0.6, 0]
+          }}
+          transition={{ duration: 3, repeat: Infinity, delay: 2 }}
         />
         <motion.div
-          className="absolute bottom-1/3 right-1/3 w-8 h-8 bg-cyan-accent/10"
+          className="absolute top-40 left-1/2 w-16 h-px bg-electric-blue/20"
           animate={{ 
-            rotate: [0, 180, 360],
-            scale: [1, 1.1, 1]
+            scaleX: [0, 1, 0],
+            opacity: [0, 0.6, 0]
           }}
-          transition={{ duration: 6, repeat: Infinity }}
+          transition={{ duration: 3, repeat: Infinity, delay: 2.5 }}
         />
+        
+        {/* Floating tech icons */}
+        <motion.div
+          className="absolute bottom-40 left-1/4 text-cyan-accent/30 text-lg"
+          animate={{ 
+            y: [0, -20, 0],
+            rotate: [0, 10, -10, 0],
+            opacity: [0.3, 0.7, 0.3]
+          }}
+          transition={{ duration: 6, repeat: Infinity, delay: 3 }}
+        >
+          🔥
+        </motion.div>
+        
+        <motion.div
+          className="absolute top-60 right-1/3 text-purple-400/30 text-lg"
+          animate={{ 
+            x: [0, 10, -5, 0],
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.5, 0.2]
+          }}
+          transition={{ duration: 8, repeat: Infinity, delay: 1 }}
+        >
+          💻
+        </motion.div>
       </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
