@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Trophy, Medal, Award, Star, Tag, GraduationCap, Upload, X } from "lucide-react";
+import { Trophy, Medal, Award, Star, Tag, GraduationCap } from "lucide-react";
 import { useState } from "react";
 
 export default function AchievementsSection() {
-  const [uploadedImages, setUploadedImages] = useState<{[key: string]: string}>({});
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   const achievements = [
@@ -113,36 +111,14 @@ export default function AchievementsSection() {
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 bg-gradient-to-br ${achievement.color.replace('text-', 'from-').replace('-500', '-500/20').replace('-400', '-400/20')} to-transparent`} />
                 
                 <CardContent className="p-6 flex flex-col items-center relative z-10">
-                  {/* Image display area */}
-                  <div className="w-full h-32 mb-4 rounded-lg overflow-hidden bg-charcoal/50 border-2 border-dashed border-slate/30 relative">
-                    {uploadedImages[achievement.id] ? (
-                      <div className="relative w-full h-full">
-                        <img 
-                          src={uploadedImages[achievement.id]} 
-                          alt={achievement.title}
-                          className="w-full h-full object-cover rounded-lg"
-                        />
-                        <Button
-                          size="sm"
-                          variant="destructive"
-                          className="absolute top-1 right-1 h-6 w-6 p-0"
-                          onClick={() => removeImage(achievement.id)}
-                        >
-                          <X className="h-3 w-3" />
-                        </Button>
+                  {/* Image placeholder area */}
+                  <div className="w-full h-32 mb-4 rounded-lg overflow-hidden bg-charcoal/50 border-2 border-slate/30 relative flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-slate/20 rounded-lg mb-2 mx-auto flex items-center justify-center">
+                        <span className="text-slate text-xl">🏆</span>
                       </div>
-                    ) : (
-                      <label className="cursor-pointer w-full h-full flex flex-col items-center justify-center hover:bg-charcoal/70 transition-colors">
-                        <Upload className="h-6 w-6 text-slate mb-2" />
-                        <span className="text-xs text-slate">Upload Photo</span>
-                        <input
-                          type="file"
-                          accept="image/*"
-                          onChange={(e) => handleImageUpload(achievement.id, e)}
-                          className="hidden"
-                        />
-                      </label>
-                    )}
+                      <span className="text-xs text-slate">Achievement Photo</span>
+                    </div>
                   </div>
 
                   <motion.div

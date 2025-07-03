@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Calendar, User, Github, ExternalLink, Upload, X } from "lucide-react";
-import { useState } from "react";
+import { ArrowLeft, Calendar, User, Github, ExternalLink } from "lucide-react";
 
 interface Project {
   id: string;
@@ -89,27 +88,7 @@ const projects: { [key: string]: Project } = {
 
 export default function ProjectDetail() {
   const [, params] = useRoute("/project/:id");
-  const [uploadedImages, setUploadedImages] = useState<string[]>([]);
-  
   const project = params ? projects[params.id] : null;
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files) {
-      Array.from(files).forEach(file => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const result = e.target?.result as string;
-          setUploadedImages(prev => [...prev, result]);
-        };
-        reader.readAsDataURL(file);
-      });
-    }
-  };
-
-  const removeImage = (index: number) => {
-    setUploadedImages(prev => prev.filter((_, i) => i !== index));
-  };
 
   if (!project) {
     return (
@@ -244,46 +223,19 @@ export default function ProjectDetail() {
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-semibold mb-6 text-cyan-accent">Project Images</h2>
                   
-                  {/* Upload Area */}
-                  <div className="mb-6">
-                    <label className="cursor-pointer block w-full h-32 border-2 border-dashed border-slate/30 rounded-lg hover:border-cyan-accent/50 transition-colors">
-                      <div className="flex flex-col items-center justify-center h-full">
-                        <Upload className="h-8 w-8 text-slate mb-2" />
-                        <span className="text-slate">Upload Project Images</span>
-                        <span className="text-xs text-slate mt-1">Click to browse or drag and drop</span>
-                      </div>
-                      <input
-                        type="file"
-                        accept="image/*"
-                        multiple
-                        onChange={handleImageUpload}
-                        className="hidden"
-                      />
-                    </label>
-                  </div>
-
-                  {/* Image Gallery */}
-                  {uploadedImages.length > 0 && (
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                      {uploadedImages.map((image, index) => (
-                        <div key={index} className="relative group">
-                          <img 
-                            src={image} 
-                            alt={`Project image ${index + 1}`}
-                            className="w-full h-32 object-cover rounded-lg"
-                          />
-                          <Button
-                            size="sm"
-                            variant="destructive"
-                            className="absolute top-2 right-2 h-6 w-6 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                            onClick={() => removeImage(index)}
-                          >
-                            <X className="h-3 w-3" />
-                          </Button>
+                  {/* Image Placeholders */}
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {[1, 2, 3].map((index) => (
+                      <div key={index} className="h-32 bg-slate/10 border-2 border-dashed border-slate/30 rounded-lg flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-8 h-8 bg-slate/20 rounded mb-2 mx-auto flex items-center justify-center">
+                            <span className="text-slate text-sm">📷</span>
+                          </div>
+                          <span className="text-xs text-slate">Project Image {index}</span>
                         </div>
-                      ))}
-                    </div>
-                  )}
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             </motion.section>

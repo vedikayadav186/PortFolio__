@@ -163,62 +163,7 @@ export default function HeroSection() {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         
-        {/* Code-like elements */}
-        <motion.div
-          className="absolute top-20 right-1/4 text-electric-blue/30 font-mono text-sm"
-          animate={{ 
-            opacity: [0.3, 0.7, 0.3],
-            y: [0, -10, 0]
-          }}
-          transition={{ duration: 4, repeat: Infinity }}
-        >
-          {'<Developer />'}
-        </motion.div>
-        
-        <motion.div
-          className="absolute bottom-1/3 left-20 text-cyan-accent/30 font-mono text-xs"
-          animate={{ 
-            opacity: [0.2, 0.6, 0.2],
-            x: [0, 5, 0]
-          }}
-          transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-        >
-          const skills = ['React', 'Python', 'MongoDB'];
-        </motion.div>
-        
-        <motion.div
-          className="absolute top-1/2 left-1/4 text-purple-400/30 font-mono text-xs"
-          animate={{ 
-            opacity: [0.2, 0.5, 0.2],
-            scale: [1, 1.05, 1]
-          }}
-          transition={{ duration: 6, repeat: Infinity, delay: 2 }}
-        >
-          function buildAwesome() {'{'}
-        </motion.div>
-        
-        {/* Tech symbols */}
-        <motion.div
-          className="absolute bottom-1/4 right-20 text-electric-blue/25 font-mono text-lg font-bold"
-          animate={{ 
-            rotate: [0, 360],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-        >
-          {'{ }'}
-        </motion.div>
-        
-        <motion.div
-          className="absolute top-1/3 left-1/3 text-cyan-accent/25 font-mono text-xl"
-          animate={{ 
-            y: [0, -15, 0],
-            opacity: [0.2, 0.6, 0.2]
-          }}
-          transition={{ duration: 7, repeat: Infinity, delay: 1.5 }}
-        >
-          {'</>'}
-        </motion.div>
+
         
         {/* Circuit-like patterns */}
         <motion.div
@@ -238,30 +183,7 @@ export default function HeroSection() {
           transition={{ duration: 3, repeat: Infinity, delay: 2.5 }}
         />
         
-        {/* Additional code elements */}
-        <motion.div
-          className="absolute bottom-40 left-1/4 text-cyan-accent/30 font-mono text-sm"
-          animate={{ 
-            y: [0, -20, 0],
-            rotate: [0, 2, -2, 0],
-            opacity: [0.3, 0.7, 0.3]
-          }}
-          transition={{ duration: 6, repeat: Infinity, delay: 3 }}
-        >
-          {'[ ]'}
-        </motion.div>
-        
-        <motion.div
-          className="absolute top-60 right-1/3 text-purple-400/30 font-mono text-lg"
-          animate={{ 
-            x: [0, 10, -5, 0],
-            scale: [1, 1.1, 1],
-            opacity: [0.2, 0.5, 0.2]
-          }}
-          transition={{ duration: 8, repeat: Infinity, delay: 1 }}
-        >
-          {'()'}
-        </motion.div>
+
       </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
