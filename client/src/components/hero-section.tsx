@@ -8,68 +8,142 @@ export default function HeroSection() {
       {/* Dynamic gradient background */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute inset-0 bg-gradient-to-br from-navy via-charcoal to-navy"
+          className="absolute inset-0"
           animate={{
             background: [
               "linear-gradient(135deg, #0a0e27 0%, #1a1d29 50%, #0a0e27 100%)",
-              "linear-gradient(135deg, #0a0e27 0%, #1e2749 50%, #0a0e27 100%)",
+              "linear-gradient(135deg, #162447 0%, #1e2749 50%, #0a0e27 100%)",
+              "linear-gradient(135deg, #0a0e27 0%, #2d1b69 50%, #1a1d29 100%)",
               "linear-gradient(135deg, #0a0e27 0%, #1a1d29 50%, #0a0e27 100%)"
             ]
           }}
           transition={{
-            duration: 8,
+            duration: 6,
             repeat: Infinity,
-            ease: "linear"
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+      
+      {/* Subtle color waves */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute inset-0 opacity-20"
+          animate={{
+            background: [
+              "radial-gradient(circle at 20% 30%, rgba(74, 144, 226, 0.3) 0%, transparent 50%)",
+              "radial-gradient(circle at 80% 70%, rgba(0, 188, 212, 0.3) 0%, transparent 50%)",
+              "radial-gradient(circle at 50% 50%, rgba(74, 144, 226, 0.2) 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 30%, rgba(74, 144, 226, 0.3) 0%, transparent 50%)"
+            ]
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
           }}
         />
       </div>
       
       {/* Animated matrix-like background */}
-      <div className="absolute inset-0 opacity-10">
-        {[...Array(50)].map((_, i) => (
+      <div className="absolute inset-0 opacity-15">
+        {[...Array(40)].map((_, i) => (
           <motion.div 
             key={i}
-            className="absolute w-px bg-gradient-to-b from-transparent via-electric-blue to-transparent"
+            className="absolute bg-gradient-to-b from-transparent via-electric-blue to-transparent"
             style={{
-              left: `${(i * 2) % 100}%`,
-              height: `${Math.random() * 60 + 20}%`,
+              left: `${(i * 2.5) % 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: '2px',
+              height: `${Math.random() * 40 + 20}%`,
             }}
             animate={{
-              opacity: [0, 1, 0],
+              opacity: [0, 0.8, 0],
               scaleY: [0, 1, 0],
+              y: ['-100%', '0%', '100%'],
             }}
             transition={{
-              duration: Math.random() * 3 + 2,
+              duration: Math.random() * 4 + 3,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: Math.random() * 6,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+        {[...Array(30)].map((_, i) => (
+          <motion.div 
+            key={`cyan-${i}`}
+            className="absolute bg-gradient-to-b from-transparent via-cyan-accent to-transparent"
+            style={{
+              left: `${(i * 3.3) % 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: '1px',
+              height: `${Math.random() * 30 + 15}%`,
+            }}
+            animate={{
+              opacity: [0, 0.6, 0],
+              scaleY: [0, 1, 0],
+              y: ['100%', '0%', '-100%'],
+            }}
+            transition={{
+              duration: Math.random() * 5 + 4,
+              repeat: Infinity,
+              delay: Math.random() * 8,
               ease: "easeInOut"
             }}
           />
         ))}
       </div>
 
-      {/* Floating particles */}
+      {/* Floating particles and orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
+        {[...Array(25)].map((_, i) => (
           <motion.div
             key={i}
-            className={`absolute rounded-full ${i % 2 === 0 ? 'bg-electric-blue/30' : 'bg-cyan-accent/30'}`}
+            className={`absolute rounded-full ${i % 3 === 0 ? 'bg-electric-blue/40' : i % 3 === 1 ? 'bg-cyan-accent/40' : 'bg-purple-500/30'}`}
             style={{
-              width: Math.random() * 6 + 2 + 'px',
-              height: Math.random() * 6 + 2 + 'px',
+              width: Math.random() * 8 + 3 + 'px',
+              height: Math.random() * 8 + 3 + 'px',
               left: Math.random() * 100 + '%',
               top: Math.random() * 100 + '%',
             }}
             animate={{
-              y: [0, -30, 0],
-              x: [0, Math.random() * 20 - 10, 0],
-              opacity: [0.3, 1, 0.3],
-              scale: [0.8, 1.2, 0.8],
+              y: [0, -40, 0],
+              x: [0, Math.random() * 30 - 15, 0],
+              opacity: [0.2, 0.8, 0.2],
+              scale: [0.5, 1.5, 0.5],
             }}
             transition={{
-              duration: Math.random() * 4 + 3,
+              duration: Math.random() * 6 + 4,
               repeat: Infinity,
-              delay: Math.random() * 3,
+              delay: Math.random() * 4,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+        
+        {/* Large floating orbs */}
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={`orb-${i}`}
+            className={`absolute rounded-full ${i % 2 === 0 ? 'bg-electric-blue/20' : 'bg-cyan-accent/20'} blur-sm`}
+            style={{
+              width: Math.random() * 60 + 40 + 'px',
+              height: Math.random() * 60 + 40 + 'px',
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%',
+            }}
+            animate={{
+              y: [0, -60, 0],
+              x: [0, Math.random() * 40 - 20, 0],
+              opacity: [0.1, 0.4, 0.1],
+              scale: [0.8, 1.3, 0.8],
+            }}
+            transition={{
+              duration: Math.random() * 8 + 6,
+              repeat: Infinity,
+              delay: Math.random() * 6,
+              ease: "easeInOut"
             }}
           />
         ))}
