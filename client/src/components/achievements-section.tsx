@@ -3,9 +3,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Medal, Award, Star, Tag, GraduationCap } from "lucide-react";
 import { useState } from "react";
 import abbWinnerImage from "@assets/WhatsApp Image 2025-07-03 at 10.11.16 PM_1751561387853.jpeg";
-import iicThirdImage from "@assets/WhatsApp Image 2025-07-03 at 10.12.10 PM_1751561406583.jpeg";
+import iicThirdImage from "@assets/WhatsApp Image 2025-07-03 at 10.29.57 PM_1751562029685.jpeg";
 import wolframAwardImage from "@assets/WhatsApp Image 2025-07-03 at 10.16.20 PM_1751561413545.jpeg";
-import techPragyanImage from "@assets/WhatsApp Image 2025-07-03 at 10.13.58 PM_1751561428063.jpeg";
+import techPragyanImage from "@assets/WhatsApp Image 2025-07-03 at 10.29.58 PM_1751562065820.jpeg";
 import odooFinalistImage from "@assets/WhatsApp Image 2025-07-03 at 10.15.00 PM_1751561437065.jpeg";
 
 export default function AchievementsSection() {
