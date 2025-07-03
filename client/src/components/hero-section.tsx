@@ -199,25 +199,25 @@ export default function HeroSection() {
         
         {/* Tech symbols */}
         <motion.div
-          className="absolute bottom-1/4 right-20 text-electric-blue/25 text-2xl"
+          className="absolute bottom-1/4 right-20 text-electric-blue/25 font-mono text-lg font-bold"
           animate={{ 
             rotate: [0, 360],
             scale: [1, 1.2, 1]
           }}
           transition={{ duration: 8, repeat: Infinity }}
         >
-          ⚛️
+          {'{ }'}
         </motion.div>
         
         <motion.div
-          className="absolute top-1/3 left-1/3 text-cyan-accent/25 text-xl"
+          className="absolute top-1/3 left-1/3 text-cyan-accent/25 font-mono text-xl"
           animate={{ 
             y: [0, -15, 0],
             opacity: [0.2, 0.6, 0.2]
           }}
           transition={{ duration: 7, repeat: Infinity, delay: 1.5 }}
         >
-          🐍
+          {'</>'}
         </motion.div>
         
         {/* Circuit-like patterns */}
@@ -238,21 +238,21 @@ export default function HeroSection() {
           transition={{ duration: 3, repeat: Infinity, delay: 2.5 }}
         />
         
-        {/* Floating tech icons */}
+        {/* Additional code elements */}
         <motion.div
-          className="absolute bottom-40 left-1/4 text-cyan-accent/30 text-lg"
+          className="absolute bottom-40 left-1/4 text-cyan-accent/30 font-mono text-sm"
           animate={{ 
             y: [0, -20, 0],
-            rotate: [0, 10, -10, 0],
+            rotate: [0, 2, -2, 0],
             opacity: [0.3, 0.7, 0.3]
           }}
           transition={{ duration: 6, repeat: Infinity, delay: 3 }}
         >
-          🔥
+          {'[ ]'}
         </motion.div>
         
         <motion.div
-          className="absolute top-60 right-1/3 text-purple-400/30 text-lg"
+          className="absolute top-60 right-1/3 text-purple-400/30 font-mono text-lg"
           animate={{ 
             x: [0, 10, -5, 0],
             scale: [1, 1.1, 1],
@@ -260,7 +260,7 @@ export default function HeroSection() {
           }}
           transition={{ duration: 8, repeat: Infinity, delay: 1 }}
         >
-          💻
+          {'()'}
         </motion.div>
       </div>
 
