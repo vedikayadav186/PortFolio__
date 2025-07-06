@@ -35,7 +35,7 @@ const projects: { [key: string]: Project } = {
     title: "CultivAI - Smart Farming Tool",
     description: "AI-powered app providing weather insights, crop progress tracking, and task scheduling, alongside equipment rental, labor hiring, and secure smart contract-based transactions.",
     longDescription: "CultivAI is a comprehensive smart farming solution designed to modernize agricultural practices through AI and blockchain technology. The platform combines weather intelligence, crop monitoring, and marketplace features to create an all-in-one farming assistant.",
-    role: "Backend & Integration Developer",
+    role: "Design, Backend & Integration Developer",
     duration: "December 2024 – March 2025",
     technologies: ["React.js", "MongoDB", "Firebase", "Razorpay", "Python", "Machine Learning", "Blockchain"],
     features: [
@@ -51,7 +51,6 @@ const projects: { [key: string]: Project } = {
     ],
     challenges: [
       "Integrating multiple APIs for weather and market data",
-      "Implementing real-time crop monitoring using computer vision",
       "Designing secure smart contracts for transactions",
       "Creating an intuitive UI for farmers with varying tech literacy"
     ],
@@ -76,9 +75,7 @@ const projects: { [key: string]: Project } = {
       "Educational content about e-waste hazards",
       "Credit system based on device disposal",
       "Precious metal recovery calculator",
-      "User registration and tracking system",
-      "Facility rating and review system",
-      "Environmental impact dashboard"
+      "User registration and tracking system"
     ],
     challenges: [
       "Accurately mapping e-waste facilities across different regions",
@@ -87,10 +84,10 @@ const projects: { [key: string]: Project } = {
       "Ensuring data accuracy and facility verification"
     ],
     outcomes: [
-      "Connected 500+ users with certified disposal facilities",
-      "Facilitated proper disposal of 2000+ electronic devices",
+      "Built a functional prototype featuring an interactive map and credit system",
+      "Gained hands-on experience with Mapbox API and backend integration.",
       "Increased awareness about e-waste environmental impact",
-      "Provided monetary incentives totaling ₹25,000+ in credits"
+      "Strengthened understanding of environmental tech challenges and user-centric design."
     ]
   }
 };
